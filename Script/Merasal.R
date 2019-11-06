@@ -44,4 +44,23 @@
   ggplot(data = data) +
     geom_bar(mapping = aes(x = Q8, fill = Q3))
 
+# influence from Society
+ggplot(data, aes(x= Q4,  group=Q3)) + 
+  geom_bar(aes(y = ..prop.., fill = factor(..x..)), stat="count") +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  labs(y = "Percent", fill="Q3") +
+  facet_grid(~Q3) +
+  scale_y_continuous(labels = scales::percent)
 
+#Income/Salary RangeWise Analysis
+ggplot(data = data) +
+  geom_bar(mapping = aes(x = Q17, fill = Q3))
+
+#First Presidential election or not
+ggplot(data = data) +
+  geom_bar(mapping = aes(x = Q6, fill = Q3))
+
+#Educational Level
+ggplot(data = data) +
+  geom_bar(mapping = aes(x = Q6, fill = Q3))
