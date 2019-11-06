@@ -36,5 +36,12 @@
   ggplot(data = data) +
     geom_bar(mapping = aes(x = Q14, fill = Q3))
 
+  #Guessed Winning party vs actual voted personnal Analysis
+  ggplot(data = data) +
+    geom_bar(mapping = aes(x = Q2, fill = Q3))
+  
+  #Last Presidential Election Vote for candidates and vote for candidate of  this election 
+  ggplot(data = data) +
+    geom_bar(mapping = aes(x = Q8, fill = Q3))
 
 
